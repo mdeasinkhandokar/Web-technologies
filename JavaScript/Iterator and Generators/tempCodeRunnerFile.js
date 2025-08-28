@@ -1,0 +1,1 @@
+console.log(genTwo.next().value);
