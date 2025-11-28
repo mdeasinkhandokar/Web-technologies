@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize First Letter of Each Word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Capitalize First Letter of Each Word</h1>
+
+    <div class="box">
+        <input type="text" id="inputText" placeholder="type here..." onkeyup="showOutput()">
+    </div>
+
+    <h2>Output:</h2>
+
+    <div class="output">
+        <p id="result"></p>
+    </div>
+
+    <script>
+
+
+
+
+function showOutput() {
+    let text = document.getElementById("inputText").value;
+
+    let result = text.replace(/\b\w/g, function(letter){
+        return letter.toUpperCase();
+    });
+
+    document.getElementById("result").innerText = result;
+}
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+
+}
+.text-white{
+    color:green;
+}
+
+.cta{
+    background:aqua;
+    padding:10px,20px;
+    width:200px;
+}

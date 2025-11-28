@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    function mydata(){
+
+var a=document.getElementById("a1").value;
+var b= document.getElementById("b1").value;
+var c=document.getElementById("c1").value;
+
+
+if( a=="" ||b==""||c==""){
+   alert("fill up all data")
+   return false;
+}
+ else if( b.length<5 || b.length>5){
+   alert("Password must be length 5");
+   return false;
+}
+else if( b!=c){
+   alert("Enter same password");
+   return false;
+}
+
+
+else{
+    true;
+}
+
+
+
+    };
+
+</script>
+<body>
+    <form onsubmit="return mydata()"action="f2.html">
+    Username: <input type="text"id="a1"><br><br>
+    Password: <input type="password" id="b1" placeholder="at least 5 digits"><br><br>
+    Confirm Password :<input type="password"id="c1"><br><br>
+    <input type="submit"value ="login" /*onclick="mydata()"*/>
+
+</form>
+</body>
+</html>

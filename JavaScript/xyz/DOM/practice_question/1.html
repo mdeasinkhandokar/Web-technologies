@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+
+<h2>Simple Form Validation</h2>
+
+<form onsubmit="return validateForm()">
+    <label>First Name:</label>
+    <input type="text" id="fname"><br><br>
+
+    <label>Last Name:</label>
+    <input type="text" id="lname"><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+    let first = document.getElementById("fname").value.trim();
+    let last = document.getElementById("lname").value.trim();
+
+    // Check if empty
+    if (first === "" || last === "") {
+        alert("Both First Name and Last Name are required!");
+        return false; // prevent submission
+    }
+
+    // Check minimum length
+    if (first.length < 2 || last.length < 2) {
+        alert("Each field must have at least 2 characters!");
+        return false; // prevent submission
+    }
+
+    return true; // allow form submission
+}
+</script>
+
+</body>
+</html>

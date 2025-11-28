@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background</title>
+</head>
+<body>
+
+<button id="changeBtn">Change Background</button>
+
+<script>
+    // Get the button
+    const btn = document.getElementById("changeBtn");
+
+    // Function to generate random color
+    function getRandomColor() {
+        // Create a random hex color like #A1B2C3
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Add click event
+    btn.addEventListener("click", function() {
+        document.body.style.backgroundColor = getRandomColor();
+    });
+</script>
+
+</body>
+</html>

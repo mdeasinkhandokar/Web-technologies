@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Membership Check</title>
+    <style>
+        #message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .red-text {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Community Membership Check</h2>
+
+<form>
+    <label>Enter Your Age:</label>
+    <input type="number" id="ageInput" min="0">
+</form>
+
+<div id="message"></div>
+
+<script>
+    const ageInput = document.getElementById("ageInput");
+    const messageDiv = document.getElementById("message");
+
+    // Listen for input changes
+    ageInput.addEventListener("input", function() {
+        const age = parseInt(this.value);
+
+        if (isNaN(age)) {
+            messageDiv.textContent = ""; // clear message if input is empty or invalid
+            messageDiv.classList.remove("red-text");
+            return;
+        }
+
+        if (age < 40) {
+            messageDiv.textContent = "To be a part of the community, you need to at least 40.";
+            messageDiv.classList.remove("red-text");
+        } else if (age >= 40 && age <= 50) {
+            messageDiv.textContent = "You are the youngsters of this community.";
+            messageDiv.classList.remove("red-text");
+        } else { // age > 50
+            messageDiv.textContent = "Top level members of the group.";
+            messageDiv.classList.add("red-text");
+        }
+    });
+</script>
+
+</body>
+</html>
